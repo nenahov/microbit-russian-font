@@ -19,7 +19,7 @@ RussianFont.showMessage("Мы ♥♥ информатику!!!", 50)
 
 MIT
 
-## Gratitude
+## Благодарность
 
-Thanks for helping my daughter Sofia.
-Thanks for inspiration to Olga Tuzova (ORT, school 550)
+Спсаибо за помощь моей дочери Софии.
+Спасибо за вдохновение Ольге Алексеевне Тузовой (ОРТ, СПб, Школа 550)
