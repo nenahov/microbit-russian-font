@@ -1,15 +1,16 @@
 {
     "name": "microbit-russian-font",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "microbit-russian-font",
     "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1"
+        "core": "*"
     },
     "files": [
         "README.md",
-        "mrf.ts"
+        "mrf.ts",
+        "_locales/ru/mrf-strings.json",
+        "_locales/ru/mrf-jsdoc-strings.json",
     ],
     "testFiles": [
         "mrftest.ts"
@@ -18,14 +19,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj",
-    "yotta": {
-        "config": {
-            "microbit-dal": {
-                "bluetooth": {
-                    "enabled": 0
-                }
-            }
-        }
-    }
+    "preferredEditor": "tsprj"
 }

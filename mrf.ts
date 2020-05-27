@@ -1,10 +1,10 @@
-
 /**
  * Functions to operate with russian font.
  */
-//% weight=100 color=#12bcf1 icon="♥"
+//% weight=100 color=#f20000 icon="♥"
 namespace RussianFont {
-     let letters = [" ", "0", "!", "4198532", ".", "4194304", ",", "4456448", "?", "4207150",
+
+    let letters = [" ", "0", "!", "4198532", ".", "4194304", ",", "4456448", "?", "4207150",
         "♥", "4685802", "ⱽ", "11417767", "🦉", "11417767", "☺", "15237440", "☻", "18284864",
         "А", "9747750", "Б", "7642151", "В", "7642407", "Г", "1082415", "Д", "18852164",
         "Е", "15768623", "Ё", "15768623", "Ж", "22483413", "З", "7608583", "И", "18470705",
@@ -20,12 +20,15 @@ namespace RussianFont {
         "у", "1118545", "ф", "4675012", "х", "18157905", "ц", "17769769", "ч", "8665385",
         "ш", "32167601", "щ", "17782449", "ъ", "6625347", "ы", "20631089", "ь", "6625346",
         "э", "7616775", "ю", "10149545", "я", "18444892",
-        "A", "9747750", "B", "7642407", "C", "14713902", "E", "15768623", "H", "9747753", 
-        "K", "9604265", "M", "18405233", "O", "6595878", "P", "1088807", "T", "4329631", 
+        "A", "9747750", "B", "7642407", "C", "14713902", "E", "15768623", "H", "9747753",
+        "K", "9604265", "M", "18405233", "O", "6595878", "P", "1088807", "T", "4329631",
         "X", "18157905",
         "a", "9747750", "b", "7642407", "c", "14713902", "e", "15768623", "h", "9747753",
         "k", "9604265", "m", "18405233", "o", "6595878", "p", "1088807", "t", "4329631",
-        "x", "18157905"  ]
+        "x", "18157905"]
+    // TODO цифры 0-9
+    // TODO прописные буквы
+    // TODO остальные английские буквы
 
     /**
      * Показываем битовую маску с нужной яркостью
@@ -33,7 +36,8 @@ namespace RussianFont {
      * @param br яркость символа
      * @param back яркость фона
      */
-    //% block
+    //% group="Slide"
+    //% block="Show $mask brightness $br background $back"
     export function showSlide(mask: number, br: number, back: number): void {
         for (let i = 0; i <= 4; i++) {
             for (let j = 0; j <= 4; j++) {
@@ -51,6 +55,7 @@ namespace RussianFont {
     * Получить битовую маску символа
     * @param символ
     */
+    //% group="Slide"
     //% block
     export function getLetterMask(letter: string): number {
         for (let l = 0; l <= letters.length / 2 - 1; l++) {
@@ -66,7 +71,10 @@ namespace RussianFont {
     * @param message строка символов
     * @param tm сколько мс. показывать каждую букву
     */
-    //% block
+    //% message.defl="Мы ♥♥ информатику!!!"
+    //% tm.defl=50 tm.min=10 tm.max=200
+    //% group="Message"
+    //% block="Show $message with delay $tm"
     export function showMessage(message: string, tm: number): void {
         if (tm <= 10) {
             tm = 10
@@ -95,6 +103,7 @@ namespace RussianFont {
     * @param message строка символов
     * @param tm сколько мс. показывать каждую букву
     */
+    //% group="Message"
     //% block
     export function showMessageShadow(message: string, tm: number): void {
         if (tm <= 10) {
@@ -105,10 +114,14 @@ namespace RussianFont {
         for (let index = 0; index <= message.length - 1; index++) {
             let mask = getLetterMask(message.charAt(index))
             let shadow = lastMask & (~mask)
-            for (let i1 = 0; i1 <= 26; i1++) {
-                showSlide(lastMask, 255 - i1 * 8 - 10, -1)
-                showSlide(mask, i1 * 8 + 10, -1)
-//                basic.pause(0.1 * tm)
+            for (let i1 = 0; i1 <= 25; i1++) {
+                showSlide(lastMask, 255 - i1 * 10 - 10, -1)
+                showSlide(mask, i1 * 7 + 10, -1)
+                basic.pause(Math.max(1, 0.2 * tm))
+            }
+            for (let i1 = 0; i1 <= 5; i1++) {
+                showSlide(mask, i1 * 11 + 190, 0)
+                basic.pause(Math.max(1, 0.1 * tm))
             }
             basic.pause(0.5 * tm)
             lastMask = mask
