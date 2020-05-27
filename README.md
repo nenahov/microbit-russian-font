@@ -7,8 +7,13 @@ See https://makecode.microbit.org
 ## Basic usage
 
 ```blocks
-// Show message "Мы ♥♥ информатику!!!" with delay 50 ms
+// Показать мигающее сообщение "Мы ♥♥ информатику!!!" с задержкой между каждой буквой 50 мс.
 RussianFont.showMessage("Мы ♥♥ информатику!!!", 50)
+```
+
+```blocks
+// Показать "Ы" с яркостью 255, яркость фона - 0
+RussianFont.showSlide(RussianFont.getLetterMask("Ы"), 255, 0)
 ```
 
 ## Supported targets
