@@ -1,10 +1,12 @@
 /**
- * Functions to operate with russian font.
+ * Русские буквы
  */
 //% weight=100 color=#f20000 icon="♥"
 namespace RussianFont {
 
     let letters = [" ", "0", "!", "4198532", ".", "4194304", ",", "4456448", "?", "4207150",
+        "0", "6595878", "1", "14815428", "2", "15767815", "3", "6590735", "4", "9413964", 
+        "5", "16268351", "6", "15251592", "7", "1118495", "8", "15252014", "9", "2243118", 
         "♥", "4685802", "ⱽ", "11417767", "🦉", "11417767", "☺", "15237440", "☻", "18284864",
         "А", "9747750", "Б", "7642151", "В", "7642407", "Г", "1082415", "Д", "18852164",
         "Е", "15768623", "Ё", "15768623", "Ж", "22483413", "З", "7608583", "И", "18470705",
@@ -26,7 +28,6 @@ namespace RussianFont {
         "a", "9747750", "b", "7642407", "c", "14713902", "e", "15768623", "h", "9747753",
         "k", "9604265", "m", "18405233", "o", "6595878", "p", "1088807", "t", "4329631",
         "x", "18157905"]
-    // TODO цифры 0-9
     // TODO прописные буквы
     // TODO остальные английские буквы
 
@@ -36,8 +37,8 @@ namespace RussianFont {
      * @param br яркость символа
      * @param back яркость фона
      */
-    //% group="Slide"
-    //% block="Show $mask brightness $br background $back"
+    //% group="leds"
+    //% block="show $mask brightness $br background $back"
     export function showSlide(mask: number, br: number, back: number): void {
         for (let i = 0; i <= 4; i++) {
             for (let j = 0; j <= 4; j++) {
@@ -55,8 +56,8 @@ namespace RussianFont {
     * Получить битовую маску символа
     * @param символ
     */
-    //% group="Slide"
-    //% block
+    //% group="leds"
+    //% block="битовая маска буквы $letter"
     export function getLetterMask(letter: string): number {
         for (let l = 0; l <= letters.length / 2 - 1; l++) {
             if (letter == letters[l * 2]) {
@@ -74,7 +75,7 @@ namespace RussianFont {
     //% message.defl="Мы ♥♥ информатику!!!"
     //% tm.defl=50 tm.min=10 tm.max=200
     //% group="Message"
-    //% block="Show $message with delay $tm"
+    //% block="show $message with delay $tm"
     export function showMessage(message: string, tm: number): void {
         if (tm <= 10) {
             tm = 10
@@ -87,6 +88,9 @@ namespace RussianFont {
     }
 
     function blinkLetter(mask: number, tm: number) {
+        if (tm <= 10) {
+            tm = 10
+        }
         for (let i1 = 0; i1 <= 26; i1++) {
             showSlide(mask, i1 * 8 + 10, 0)
             basic.pause(0.1 * tm)
