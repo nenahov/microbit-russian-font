@@ -11,6 +11,7 @@
         "mrf.ts",
         "_locales/ru/mrf-strings.json",
         "_locales/ru/mrf-jsdoc-strings.json"
+		"_locales/ru/RussianFont-strings.json"		
     ],
     "testFiles": [
         "mrftest.ts"
