@@ -1,0 +1,11 @@
+{
+  "RussianFont.getLetterMask|block": "битовая маска буквы $letter",
+  "RussianFont.getScreenMask|block": "маска экрана",
+  "RussianFont.showMessageShadow|block": "true",
+  "RussianFont.showMessage|block": "показать $message с задержкой $tm",
+  "RussianFont.showSlide|block": "показать маску $mask с яркостью $br, яркость фона $back",
+  "RussianFont|block": "Русский шрифт",
+  "{id:category}RussianFont": "RussianFont",
+  "{id:group}Message": "Строки",
+  "{id:group}leds": "Маски"
+}

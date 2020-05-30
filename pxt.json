@@ -9,9 +9,8 @@
     "files": [
         "README.md",
         "mrf.ts",
-        "_locales/ru/mrf-strings.json",
-        "_locales/ru/mrf-jsdoc-strings.json",
-		"_locales/ru/RussianFont-strings.json"		
+        "_locales/ru/microbit-russian-font-strings.json",
+        "_locales/ru/microbit-russian-font-jsdoc-strings.json"
     ],
     "testFiles": [
         "mrftest.ts"

@@ -1,0 +1,15 @@
+{
+  "RussianFont": "Русские буквы",
+  "RussianFont.getLetterMask": "Получить битовую маску символа\n@param символ",
+  "RussianFont.getScreenMask": "Получить битовую маску текущего экрана",
+  "RussianFont.showMessage": "Показываем мигающую строку",
+  "RussianFont.showMessageShadow": "Показываем мигающую строку",
+  "RussianFont.showMessageShadow|param|message": "строка символов",
+  "RussianFont.showMessageShadow|param|tm": "сколько мс. показывать каждую букву",
+  "RussianFont.showMessage|param|message": "строка символов",
+  "RussianFont.showMessage|param|tm": "сколько мс. показывать каждую букву",
+  "RussianFont.showSlide": "Показываем битовую маску с нужной яркостью",
+  "RussianFont.showSlide|param|back": "яркость фона",
+  "RussianFont.showSlide|param|br": "яркость символа",
+  "RussianFont.showSlide|param|mask": "битовая маска"
+}
