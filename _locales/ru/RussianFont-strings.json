@@ -1,0 +1,4 @@
+{
+  "RussianFont.showMessage|block": "Показать $message с задержкой $tm",
+  "{id:category}RussianFont": "Русский шрифт"
+}
