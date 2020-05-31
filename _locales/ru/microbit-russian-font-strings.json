@@ -7,5 +7,5 @@
   "RussianFont|block": "Русский шрифт",
   "{id:category}RussianFont": "Русский шрифт",
   "{id:group}Message": "Строки",
-  "{id:group}leds": "Маски"
+  "{id:group}Screen": "Экран"
 }
