@@ -100,7 +100,7 @@ namespace RussianFont {
     * @param message строка символов
     * @param tm сколько мс. показывать каждую букву
     */
-    //% message.defl="Мы ♥♥ информатику!!!"
+    //% message.defl="МЫ ♥♥ ИНФОРМАТИКУ!!!"
     //% tm.defl=50 tm.min=10 tm.max=200
     //% group="Message"
     //% block="show $message with delay $tm"
@@ -135,8 +135,10 @@ namespace RussianFont {
     * @param message строка символов
     * @param tm сколько мс. показывать каждую букву
     */
+    //% message.defl="МЫ ♥♥ ИНФОРМАТИКУ!!!"
+    //% tm.defl=50 tm.min=10 tm.max=200
     //% group="Message"
-    //% block
+    //% block="show shadow $message with delay $tm"
     export function showMessageShadow(message: string, tm: number): void {
         if (tm <= 10) {
             tm = 10
